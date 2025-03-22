@@ -14,3 +14,20 @@ def get_character_count(text):
         else:
             total_chars[char] = 1
     return total_chars
+
+def sort_character_dictionary(char_dict):
+    character_list = create_character_list(char_dict)
+    character_list.sort(reverse=True, key=sort_num)
+    return character_list
+
+def create_character_list(char_dict):
+    character_list = []
+    for k in char_dict:
+        c = char_dict[k]
+        d = {"name": k, "num": c}
+        character_list.append(d)
+    return character_list
+
+
+def sort_num(dict):
+    return dict["num"]
